@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/subscenes/maps/Shop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/subscenes/actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scripts/scenes/Shop.gd" type="Script" id=3]
+
+[node name="Shop" type="Node2D" groups=["town"]]
+script = ExtResource( 3 )
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+limit_pos = Vector2( 0, 0 )
+limit_size = Vector2( 0, 0 )
+
+[node name="Actors" type="YSort" parent="."]
+
+[node name="Player" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 120, 160 )

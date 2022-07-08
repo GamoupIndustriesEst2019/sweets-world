@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Weapon.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Sword"
+what_it_does = "ATK+3, DEF+2"
+description = "A well-ranged weapon for battle. Experienced warriors can wield this!"
+price = 250
+usable = 0
+animation = ""
+battle_animation = ""
+sound = null
+scope = 0
+consume = false
+uses = {
+"healhp": 0
+}
+atk = 3
+def = 2
+two_handed = false

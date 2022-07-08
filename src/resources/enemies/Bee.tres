@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Enemy.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Bee"
+lvl = 1
+experience = 2
+hp = 8
+maxhp = 8
+sp = 2
+maxsp = 2
+atk = 1
+batatk = 1
+def = 1

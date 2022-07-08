@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Spell.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Ice"
+description = "A spell that does ice damage to the target. Also has a 15% chance to freeze the target."
+sp_cost = 2
+power = 20
+chance = 80
+scope = 0
+statuses = {
+"freeze": 15
+}

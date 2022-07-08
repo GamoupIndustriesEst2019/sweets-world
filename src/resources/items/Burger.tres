@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Item.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Burger"
+what_it_does = "Heals 20 HP"
+description = "A filling food. It's sold everywhere, even outside of the galaxy!"
+price = 30
+usable = 3
+animation = "heal"
+battle_animation = ""
+sound = "res://assets/sounds/heal.wav"
+scope = 3
+consume = true
+uses = {
+"healhp": 20,
+"healsp": 0
+}

@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/images/important/particles/defense_up.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/ui/PartyMember.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/important/particles/heal.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Animation" id=2]
+resource_name = "off"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParticlesDown:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParticlesUp:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "on down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParticlesDown:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "on up"
+
+[node name="PartyMember" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -300.0
+margin_bottom = -416.0
+rect_min_size = Vector2( 340, 64 )
+script = ExtResource( 2 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 128.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 112, 16 )
+text = "Destiny"
+
+[node name="Level" type="Label" parent="."]
+margin_left = 144.0
+margin_right = 256.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 112, 16 )
+text = "Lv."
+
+[node name="Val" type="Label" parent="Level"]
+margin_left = 64.0
+margin_right = 104.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 48, 16 )
+text = "1"
+align = 2
+
+[node name="HP" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 144.0
+margin_bottom = 40.0
+text = "HP:    /"
+
+[node name="Cur" type="Label" parent="HP"]
+margin_left = 64.0
+margin_right = 112.0
+margin_bottom = 16.0
+text = "999"
+align = 2
+
+[node name="Max" type="Label" parent="HP"]
+margin_left = 128.0
+margin_right = 176.0
+margin_bottom = 16.0
+text = "999"
+align = 2
+
+[node name="SP" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 44.0
+margin_right = 144.0
+margin_bottom = 60.0
+text = "SP:    /"
+
+[node name="Cur" type="Label" parent="SP"]
+margin_left = 64.0
+margin_right = 112.0
+margin_bottom = 16.0
+text = "999"
+align = 2
+
+[node name="Max" type="Label" parent="SP"]
+margin_left = 128.0
+margin_right = 176.0
+margin_bottom = 16.0
+text = "999"
+align = 2
+
+[node name="ParticlesDown" type="CPUParticles2D" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 1 )
+position = Vector2( 80, 8 )
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 32 )
+scale_amount = 2.0
+anim_speed = 1.0
+
+[node name="ParticlesUp" type="CPUParticles2D" parent="."]
+material = SubResource( 1 )
+position = Vector2( 80, 48 )
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 48, 32 )
+gravity = Vector2( 0, -98 )
+scale_amount = 2.0
+anim_speed = 1.0
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/off = SubResource( 2 )
+"anims/on down" = SubResource( 3 )
+"anims/on up" = SubResource( 4 )

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Body" type="Area2D"]
+position = Vector2( 10, 6 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "This is the collision of the actor."
+}
+
+[node name="Raycast" type="RayCast2D" parent="."]
+position = Vector2( 0, 4 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+__meta__ = {
+"_editor_description_": "This checks for collision, like walls, NPCs, etc."
+}
+
+[node name="Tween" type="Tween" parent="."]
+playback_process_mode = 0

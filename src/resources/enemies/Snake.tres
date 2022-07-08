@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Enemy.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Snake"
+lvl = 1
+experience = 4
+hp = 16
+maxhp = 16
+sp = 4
+maxsp = 4
+atk = 2
+batatk = 2
+def = 2

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://src/scripts/res_stuff/Character.gd" type="Script" id=1]
+[ext_resource path="res://src/resources/items/Sword.tres" type="Resource" id=2]
+[ext_resource path="res://src/resources/items/Burger.tres" type="Resource" id=3]
+[ext_resource path="res://src/resources/spells/Fire.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Platty"
+lvl = 2
+experience = 0
+hp = 10
+maxhp = 20
+sp = 2
+maxsp = 14
+regatk = 2
+regdef = 2
+regspd = 2
+statuses = [  ]
+inv = [ ExtResource( 2 ), ExtResource( 3 ) ]
+equipment = {
+"accessory": null,
+"body": null,
+"head": null,
+"left": null,
+"legs": null,
+"right": ExtResource( 2 )
+}
+equippable = [ ExtResource( 2 ) ]
+spells_learned = [ ExtResource( 4 ) ]
+learnable_spells = {
+"Fire": 1,
+"Ice": 2
+}

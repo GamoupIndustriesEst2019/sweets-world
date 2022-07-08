@@ -1,0 +1,365 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/important/ui/res/Default.tres" type="StyleBox" id=1]
+[ext_resource path="res://scenes/subscenes/ui/Cursor.tscn" type="PackedScene" id=2]
+
+[node name="EquipMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EquipPanel" type="Panel" parent="."]
+margin_left = 42.0
+margin_top = 42.0
+margin_right = 598.0
+margin_bottom = 438.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="NamePanel" type="Panel" parent="EquipPanel"]
+margin_right = 556.0
+margin_bottom = 48.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="Name" type="Label" parent="EquipPanel/NamePanel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 540.0
+margin_bottom = 32.0
+text = "Destiny's Equipment"
+align = 1
+
+[node name="CharacterStuff" type="Control" parent="EquipPanel"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 168.0
+margin_bottom = 388.0
+
+[node name="ATK" type="Label" parent="EquipPanel/CharacterStuff"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 24.0
+text = "ATK: "
+
+[node name="Val" type="Label" parent="EquipPanel/CharacterStuff/ATK"]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 16.0
+text = "255"
+
+[node name="DEF" type="Label" parent="EquipPanel/CharacterStuff"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 88.0
+margin_bottom = 48.0
+text = "DEF: "
+
+[node name="Val" type="Label" parent="EquipPanel/CharacterStuff/DEF"]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 16.0
+text = "255"
+
+[node name="SPD" type="Label" parent="EquipPanel/CharacterStuff"]
+margin_left = 8.0
+margin_top = 56.0
+margin_right = 88.0
+margin_bottom = 72.0
+text = "SPD: "
+
+[node name="Val" type="Label" parent="EquipPanel/CharacterStuff/SPD"]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 16.0
+text = "255"
+
+[node name="EquipmentPanel" type="Panel" parent="EquipPanel"]
+margin_left = 204.0
+margin_top = 40.0
+margin_right = 556.0
+margin_bottom = 396.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="EquipmentCont" type="VBoxContainer" parent="EquipPanel/EquipmentPanel"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 72.0
+margin_bottom = 56.0
+custom_constants/separation = 16
+
+[node name="Right" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_right = 112.0
+margin_bottom = 16.0
+text = "Right: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Right"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "BurgerKing64"
+
+[node name="Left" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 48.0
+text = "Left: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Left"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "Weak-Be-Gone"
+
+[node name="Head" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_top = 64.0
+margin_right = 112.0
+margin_bottom = 80.0
+text = "Head: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Head"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "BurgerKing64"
+
+[node name="Body" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_top = 96.0
+margin_right = 112.0
+margin_bottom = 112.0
+text = "Body: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Body"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "BurgerKing64"
+
+[node name="Legs" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_top = 128.0
+margin_right = 112.0
+margin_bottom = 144.0
+text = "Legs: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Legs"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "BurgerKing64"
+
+[node name="Accessory" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont"]
+margin_top = 160.0
+margin_right = 112.0
+margin_bottom = 176.0
+text = "Accsr: "
+
+[node name="Piece" type="Label" parent="EquipPanel/EquipmentPanel/EquipmentCont/Accessory"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 16.0
+text = "BurgerKing64"
+
+[node name="Cursor" parent="EquipPanel/EquipmentPanel" instance=ExtResource( 2 )]
+margin_left = 12.0
+margin_top = 16.0
+margin_right = 28.0
+margin_bottom = 32.0
+menu_parent_path = NodePath("../EquipmentCont")
+offset = Vector2( -20, 0 )
+
+[node name="OptionPanel" type="Panel" parent="EquipPanel"]
+margin_top = 349.0
+margin_right = 408.0
+margin_bottom = 397.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="OptCont" type="HBoxContainer" parent="EquipPanel/OptionPanel"]
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 400.0
+margin_bottom = 40.0
+custom_constants/separation = 32
+
+[node name="Equip" type="Label" parent="EquipPanel/OptionPanel/OptCont"]
+margin_top = 8.0
+margin_right = 80.0
+margin_bottom = 24.0
+text = "Equip"
+
+[node name="Optimal" type="Label" parent="EquipPanel/OptionPanel/OptCont"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 224.0
+margin_bottom = 24.0
+text = "Optimal"
+
+[node name="Unequip" type="Label" parent="EquipPanel/OptionPanel/OptCont"]
+margin_left = 256.0
+margin_top = 8.0
+margin_right = 368.0
+margin_bottom = 24.0
+text = "Unequip"
+
+[node name="Cursor" parent="EquipPanel/OptionPanel" instance=ExtResource( 2 )]
+margin_left = 12.0
+margin_top = 16.0
+margin_right = 28.0
+margin_bottom = 32.0
+menu_parent_path = NodePath("../OptCont")
+offset = Vector2( -20, 0 )
+
+[node name="EquippablePanel" type="Panel" parent="EquipPanel"]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 380.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="EquippableCont" type="GridContainer" parent="EquipPanel/EquippablePanel"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 224.0
+margin_bottom = 56.0
+custom_constants/vseparation = 16
+custom_constants/hseparation = 32
+columns = 2
+
+[node name="Item1" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_right = 192.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item2" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_right = 416.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item3" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 32.0
+margin_right = 192.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item4" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 32.0
+margin_right = 416.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item5" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item6" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 64.0
+margin_right = 416.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item7" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 96.0
+margin_right = 192.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item8" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 96.0
+margin_right = 416.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item9" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item10" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 128.0
+margin_right = 416.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item11" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 160.0
+margin_right = 192.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item12" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 160.0
+margin_right = 416.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item13" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 192.0
+margin_right = 192.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item14" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 192.0
+margin_right = 416.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item15" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 224.0
+margin_right = 192.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item16" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 224.0
+margin_right = 416.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item17" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_top = 256.0
+margin_right = 192.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Item18" type="Label" parent="EquipPanel/EquippablePanel/EquippableCont"]
+margin_left = 224.0
+margin_top = 256.0
+margin_right = 416.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 192, 16 )
+text = "BurgerKing64"
+
+[node name="Cursor" parent="EquipPanel/EquippablePanel" instance=ExtResource( 2 )]
+margin_left = 12.0
+margin_top = 16.0
+margin_right = 28.0
+margin_bottom = 32.0
+menu_parent_path = NodePath("../EquippableCont")
+offset = Vector2( -20, 0 )
